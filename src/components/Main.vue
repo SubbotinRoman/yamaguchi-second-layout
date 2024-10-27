@@ -50,13 +50,13 @@
 }
 
 .text-block__title {
-    font-size: 3rem;
+    font-size: 3.6rem;
     font-weight: normal;
     margin-bottom: 2rem;
 }
 
 .text-block__text {
-    font-size: 1rem;
+    font-size: 1.5rem;
     line-height: 1.5;
     margin-bottom: 1rem;
     color: #c5c5c5;
@@ -67,13 +67,13 @@
 }
 
 .command-block__title {
-    font-size: 1.4rem;
+    font-size: 2rem;
     font-weight: 900;
     margin-bottom: 0.5rem;
 }
 
 .command-block__text {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 900;
     margin: 0;
     margin-left: 7%;
@@ -133,7 +133,7 @@
 
 .image-block__ellipse.expand {
     width: 270px;
-    height: 90px;
+    height: 100px;
 }
 
 .image-block__ellipse.final {
