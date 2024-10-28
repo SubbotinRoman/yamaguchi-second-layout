@@ -9,20 +9,23 @@ document.addEventListener('DOMContentLoaded', function () {
     const ellipse = document.querySelector('.image-block__ellipse');
     const womanImage = document.querySelector('.image-block__woman');
 
-    // Показываем и расширяем эллипс
-    ellipse.classList.add('appear');
-    ellipse.classList.add('expand');
-
-    // Через 800мс показываем изображение женщины
+    // Задержка перед началом анимации
     setTimeout(() => {
-        womanImage.classList.add('appear');
-    }, 800);
+        // Показываем и расширяем эллипс
+        ellipse.classList.add('appear');
+        ellipse.classList.add('expand');
 
-    // Через 1600мс уменьшаем эллипс до финального размера
-    setTimeout(() => {
-        ellipse.classList.remove('expand');
-        ellipse.classList.add('final');
-    }, 1600);
+        // Через 800мс показываем изображение женщины
+        setTimeout(() => {
+            womanImage.classList.add('appear');
+        }, 800);
+
+        // Через 1600мс уменьшаем эллипс до финального размера
+        setTimeout(() => {
+            ellipse.classList.remove('expand');
+            ellipse.classList.add('final');
+        }, 1600);
+    }, 1000); // Задержка 1 секунда перед началом анимации
 });
 
 createApp(App).mount('#app');
