@@ -203,11 +203,11 @@
     }
 
     .command-block__title {
-        font-size: 2.7rem;
+        font-size: 2.5rem;
     }
 
     .command-block__text {
-        font-size: 3.5rem;
+        font-size: 3.3rem;
         margin-left: 0;
     }
 
@@ -227,7 +227,7 @@
     }
 
     .image-block__woman.appear {
-        top: -50px; /* Конечная позиция после анимации */
+        top: 0px;
         opacity: 1;
     }
 
@@ -248,8 +248,8 @@
 
     .image-block__interface {
         position: absolute;
-        width: 100%;
-        left: 50%;
+        width: 120%;
+        left: 55%;
         transform: translateX(-50%);
         top: 800px; /* Позиционируем интерфейс после девушки */
     }
