@@ -16,7 +16,6 @@ html {
     font-family: var(--font-family);
     color: white;
     overflow-x: hidden;
-    overflow-y: hidden;
     z-index: 1;
 }
 

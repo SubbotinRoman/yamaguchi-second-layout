@@ -91,16 +91,19 @@
     position: absolute;
     height: 90%;
     left: 10%;
-    bottom: -100%; /* Изначальная позиция — под отверстием */
-    transition: bottom 3s ease-in-out; /* Плавный подъем */
-    overflow: hidden; /* Скрыть выход за пределы экрана */
-    animation: none; /* Убираем анимацию левитации на начальном этапе */
+    bottom: -100%;
+    transform: translateY(100%);
+    transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 2;
+    opacity: 0;
+    clip-path: ellipse(100% 100% at 50% 50%);
 }
 
 .image-block__woman.appear {
     bottom: 5%;
-    animation: levitate 3s infinite alternate ease-in-out; /* Левитация после подъема */
+    opacity: 1;
+    transform: translateY(0);
+    animation: levitate 3s infinite alternate ease-in-out;
 }
 
 @keyframes levitate {
@@ -116,15 +119,14 @@
     position: absolute;
     width: 0;
     height: 0;
-    top: 87%;
+    top: 92%;
     left: 28%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
     background: #000000;
     border-radius: 50%;
-    transition: all 2s ease-in-out;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
     opacity: 0;
     z-index: 1;
-    overflow: hidden;
 }
 
 .image-block__ellipse.appear {
@@ -134,11 +136,13 @@
 .image-block__ellipse.expand {
     width: 300px;
     height: 100px;
+    opacity: 1;
 }
 
 .image-block__ellipse.final {
     width: 193.78px;
     height: 61.14px;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .image-block__ellipse.shrink {
@@ -160,15 +164,17 @@
     .wrapper {
         flex-direction: column;
         height: auto;
-        overflow-y: auto;
-        padding: 0;
-        margin: 0;
+        min-height: 100vh;
+        overflow-y: visible;
+        padding: 20px;
+        position: relative;
     }
 
     .text-block {
         width: 100%;
         margin: 0 auto;
         padding: 0;
+        position: relative;
     }
 
     .text-block__title {
@@ -193,7 +199,7 @@
         margin-left: 16.12px;
         margin-right: 13.58px;
         text-align: left;
-        margin-top: 1150px;
+        margin-top: 2100px; 
     }
 
     .command-block__title {
@@ -201,45 +207,36 @@
     }
 
     .command-block__text {
-        font-size: 3.8rem;
+        font-size: 3.5rem;
         margin-left: 0;
     }
 
     .image-block {
-        position: absolute;
-        width: 100%;
-        height: 400px;
-        margin-top: 30px;
+        position: relative;
+        margin-left: 16.12px;
+        margin-right: 13.58px;
+        text-align: left;
+        margin-top: 850px; 
     }
 
     .image-block__woman {
         position: absolute;
-        height: 140%;
-        left: 10%;
-        bottom: -100%; /* Начальная позиция - полностью скрыта */
-        transition: bottom 1s ease-in-out;
-        z-index: 2;
-        opacity: 0; /* Начально невидима */
+        height: 250%;
+        left: -22%;
+        transform: translateX(-50%);
+        top: -220%;
     }
 
     .image-block__woman.appear {
-        bottom: 200%;
-        opacity: 1; /* Становится видимой */
-        animation: levitate 3s infinite alternate ease-in-out;
+        bottom: 40%;
     }
 
     .image-block__ellipse {
         position: absolute;
-        width: 193.78px; /* Начальный размер */
-        height: 61.14px;
-        top: -110%;
+        bottom: 20%;
         left: 50%;
         transform: translateX(-50%);
-        background: #000000;
-        border-radius: 50%;
-        transition: all 1.5s ease-in-out;
-        opacity: 0;
-        z-index: 1;
+        top: 30%;
     }
 
     .image-block__ellipse.appear {
@@ -249,10 +246,11 @@
 
     .image-block__interface {
         position: absolute;
-        width: 100%;
-        left: 50%;
+        width: 120%;
+        left: 55%;
         transform: translateX(-50%);
-        top: -75%;
+        top: 10%; 
+        margin-top: 400px;
     }
 
     br {

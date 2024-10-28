@@ -8,27 +8,42 @@ document.addEventListener('DOMContentLoaded', function () {
     const womanImage = document.querySelector('.image-block__woman');
 
     function startAnimation() {
-        // Появление эллипса
-        ellipse.classList.add('appear');
+        // Начальное появление эллипса
+        requestAnimationFrame(() => {
+            ellipse.classList.add('appear');
 
-        // Через 0.5 секунды расширяем эллипс
-        setTimeout(() => {
-            ellipse.classList.add('expand');
-        }, 1000);
+            // Расширение эллипса
+            setTimeout(() => {
+                ellipse.classList.add('expand');
+            }, 100);
 
-        // Через 1.5 секунды начинаем поднимать изображение женщины
-        setTimeout(() => {
-            womanImage.classList.add('appear');
-        }, 2000);
+            // Появление женщины
+            setTimeout(() => {
+                womanImage.classList.add('appear');
+            }, 800);
 
-        // Через 3 секунды уменьшаем эллипс до финального размера
-        setTimeout(() => {
-            ellipse.classList.remove('expand');
-            ellipse.classList.add('final');
-        }, 4000);
+            // Уменьшение эллипса до финального размера
+            setTimeout(() => {
+                ellipse.classList.remove('expand');
+                ellipse.classList.add('final');
+            }, 1600);
+        });
     }
 
-    // Запускаем анимацию при загрузке страницы
-    startAnimation();
+    // Добавляем Intersection Observer для запуска анимации при прокрутке
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    startAnimation();
+                    observer.disconnect();
+                }
+            });
+        },
+        { threshold: 0.5 },
+    );
+
+    observer.observe(document.querySelector('.wrapper'));
 });
+
 createApp(App).mount('#app');
