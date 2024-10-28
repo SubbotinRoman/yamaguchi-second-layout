@@ -134,8 +134,8 @@
 }
 
 .image-block__ellipse.expand {
-    width: 300px;
-    height: 100px;
+    width: 350px;
+    height: 120px;
     opacity: 1;
 }
 
@@ -199,7 +199,7 @@
         margin-left: 16.12px;
         margin-right: 13.58px;
         text-align: left;
-        margin-top: 2100px; 
+        margin-top: 1300px; /* Увеличиваем отступ сверху */
     }
 
     .command-block__title {
@@ -213,30 +213,32 @@
 
     .image-block {
         position: relative;
-        margin-left: 16.12px;
-        margin-right: 13.58px;
-        text-align: left;
-        margin-top: 850px; 
+        width: 100%;
+        height: 400px;
     }
 
     .image-block__woman {
         position: absolute;
-        height: 250%;
-        left: -22%;
+        height: 200%;
+        left: -10%;
         transform: translateX(-50%);
-        top: -220%;
+        top: 1200px; /* Меняем позицию для правильного появления из эллипса */
+        bottom: auto;
     }
 
     .image-block__woman.appear {
-        bottom: 40%;
+        top: -50px; /* Конечная позиция после анимации */
+        opacity: 1;
     }
 
     .image-block__ellipse {
         position: absolute;
-        bottom: 20%;
+        bottom: auto;
         left: 50%;
         transform: translateX(-50%);
-        top: 30%;
+        top: 700px;
+        width: 350px; /* Увеличиваем начальный размер эллипса */
+        height: 120px;
     }
 
     .image-block__ellipse.appear {
@@ -246,11 +248,10 @@
 
     .image-block__interface {
         position: absolute;
-        width: 120%;
-        left: 55%;
+        width: 100%;
+        left: 50%;
         transform: translateX(-50%);
-        top: 10%; 
-        margin-top: 400px;
+        top: 800px; /* Позиционируем интерфейс после девушки */
     }
 
     br {
