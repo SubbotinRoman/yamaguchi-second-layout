@@ -56,7 +56,7 @@
 }
 
 .text-block__text {
-    font-size: 1.3rem;
+    font-size: 1rem;
     line-height: 1.5;
     margin-bottom: 1rem;
     color: #c5c5c5;
