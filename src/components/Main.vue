@@ -94,9 +94,9 @@
     bottom: -100%;
     transform: translateY(100%);
     transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+    clip-path: ellipse(100% 100% at 50% 50%);
     z-index: 2;
     opacity: 0;
-    clip-path: ellipse(100% 100% at 50% 50%);
 }
 
 .image-block__woman.appear {
@@ -162,23 +162,23 @@
 
 @media screen and (max-width: 400px) {
     .wrapper {
+        position: relative;
         flex-direction: column;
         height: auto;
         min-height: 100vh;
         overflow-y: visible;
         padding: 20px;
-        position: relative;
     }
 
     .text-block {
+        position: relative;
         width: 100%;
         margin: 0 auto;
         padding: 0;
-        position: relative;
     }
 
     .text-block__title {
-        font-size: 2.8rem;
+        font-size: 2.6rem;
         text-align: left;
         margin-left: 16.12px;
         margin-top: 17.32px;
@@ -186,7 +186,7 @@
     }
 
     .text-block__text {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         text-align: left;
         margin-top: 33.43px;
         margin-left: 16.12px;
@@ -199,7 +199,7 @@
         margin-left: 16.12px;
         margin-right: 13.58px;
         text-align: left;
-        margin-top: 1300px; /* Увеличиваем отступ сверху */
+        margin-top: 1300px;
     }
 
     .command-block__title {
@@ -222,7 +222,7 @@
         height: 200%;
         left: -10%;
         transform: translateX(-50%);
-        top: 1200px; /* Меняем позицию для правильного появления из эллипса */
+        top: 1200px;
         bottom: auto;
     }
 
@@ -237,7 +237,7 @@
         left: 50%;
         transform: translateX(-50%);
         top: 700px;
-        width: 350px; /* Увеличиваем начальный размер эллипса */
+        width: 350px;
         height: 120px;
     }
 
@@ -251,7 +251,7 @@
         width: 120%;
         left: 55%;
         transform: translateX(-50%);
-        top: 800px; /* Позиционируем интерфейс после девушки */
+        top: 800px;
     }
 
     br {

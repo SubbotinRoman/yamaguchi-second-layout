@@ -3,47 +3,26 @@ import './style.css';
 import App from './App.vue';
 import 'normalize.css';
 
+// Ждем полной загрузки DOM перед выполнением скрипта
 document.addEventListener('DOMContentLoaded', function () {
+    // Получаем элементы для анимации
     const ellipse = document.querySelector('.image-block__ellipse');
     const womanImage = document.querySelector('.image-block__woman');
 
-    function startAnimation() {
-        // Начальное появление эллипса
-        requestAnimationFrame(() => {
-            ellipse.classList.add('appear');
+    // Показываем и расширяем эллипс
+    ellipse.classList.add('appear');
+    ellipse.classList.add('expand');
 
-            // Расширение эллипса
-            setTimeout(() => {
-                ellipse.classList.add('expand');
-            }, 100);
+    // Через 800мс показываем изображение женщины
+    setTimeout(() => {
+        womanImage.classList.add('appear');
+    }, 800);
 
-            // Появление женщины
-            setTimeout(() => {
-                womanImage.classList.add('appear');
-            }, 800);
-
-            // Уменьшение эллипса до финального размера
-            setTimeout(() => {
-                ellipse.classList.remove('expand');
-                ellipse.classList.add('final');
-            }, 1600);
-        });
-    }
-
-    // Добавляем Intersection Observer для запуска анимации при прокрутке
-    const observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    startAnimation();
-                    observer.disconnect();
-                }
-            });
-        },
-        { threshold: 0.5 },
-    );
-
-    observer.observe(document.querySelector('.wrapper'));
+    // Через 1600мс уменьшаем эллипс до финального размера
+    setTimeout(() => {
+        ellipse.classList.remove('expand');
+        ellipse.classList.add('final');
+    }, 1600);
 });
 
 createApp(App).mount('#app');
