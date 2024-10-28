@@ -203,18 +203,18 @@
     }
 
     .command-block__title {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
 
     .command-block__text {
-        font-size: 3.3rem;
+        font-size: 3rem;
         margin-left: 0;
     }
 
     .image-block {
         position: relative;
         width: 100%;
-        height: 400px;
+        height: 350px;
     }
 
     .image-block__woman {
